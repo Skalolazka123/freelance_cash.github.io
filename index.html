@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Деньги от mades.shop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+    body {
+    	background-image: url(bg.jpg);
+    	background-size: cover;
+    }
+    h1 {
+        text-align: center;
+        color: #679B00;
+        font-size: 3.5em;
+        width: 100%;
+        margin: 0 0 0.5rem 0;
+    }
+
+    h2 {
+        color: #33CCCC;
+        text-align: center;
+        font-size: 2.5em;
+        width: 100%;
+        margin: 0 0 3rem 0;
+
+    }
+
+    .container {
+        height: 100%;
+        width: 80%;
+        padding: 40px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        border: 2px solid #9FEE00;
+        color: #024702;
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .item-wrap {
+        width: 7%;
+        min-width: 28px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .item {
+        width: 100%;
+        writing-mode: tb-rl;
+        transform: rotate(180deg);
+        font-size: 2rem;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .item-wrap:nth-child(2n)>.item {
+        background-color: #009999;
+    }
+
+    .item-wrap:nth-child(2n-1)>.item {
+        background-color: #33CCCC;
+    }
+
+    .item-wrap span {
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #024702;
+    }
+
+	/*Blink text*/
+	@-webkit-keyframes h1 {
+	10% { transform: scale(1, 1) rotate(80deg); }
+	20% { transform: scale(0, 0) rotate(160deg); }
+	100% { transform: scale(0, 0) rotate(0deg); }
+	}
+	@keyframes h1 {
+	10% { transform: scale(1, 1) rotate(80deg); }
+	20% { transform: scale(0, 0) rotate(160deg); }
+	100% { transform: scale(0, 0) rotate(0deg); }
+	}
+	h1 {
+	position: relative;
+	display: inline-block;
+	text-shadow: 0 0 10px #008500;
+	width: auto;
+	}
+	h1:after,  h1:before {
+	content: "";
+	position: absolute; top: 0; left: 0;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-image:
+	radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0) 30%),
+	linear-gradient(45deg, rgba(0,0,0,0) 49%, rgba(255,255,255,.4) 50%, rgba(0,0,0,0) 51%),
+	linear-gradient(135deg, rgba(0,0,0,0) 49%, rgba(255,255,255,.4) 50%, rgba(0,0,0,0) 51%);
+	-webkit-animation: h1 10s linear infinite;
+	animation: h1 10s linear infinite;
+	transform: scale(0, 0) rotate(0deg);
+	}
+	h1:before {
+	right: 0; left: auto;
+	-webkit-animation-delay: 5s;
+	animation-delay: 5s;
+	}
+    @media only screen and (max-width: 800px) {
+        .item {
+            font-size: 1rem;
+            padding: 2px;
+        }
+
+        .item-wrap span {
+            font-size: 0.8rem;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+    	<h1>2019 год</h1>
+    	<h2>Деньги от mades.shop</h2>
+        <div class="item-wrap">
+            <div class="item item1"></div>
+            <span>1</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item2">101.5</div>
+            <span>2</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item3">200</div>
+            <span>3</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item4">50</div>
+            <span>4</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item5">300</div>
+            <span>5</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item6">30</div>
+            <span>6</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item7">10</div>
+            <span>7</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item8">85</div>
+            <span>8</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item9"></div>
+            <span>9</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item10"></div>
+            <span>10</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item11"></div>
+            <span>11</span>
+        </div>
+        <div class="item-wrap">
+            <div class="item item12"></div>
+            <span>12</span>
+        </div>
+    </div>
+    <script>
+    $('.item-wrap').each(function() {
+        var itemEl = $(this).find('.item');
+        itemEl.css('height', (itemEl.text() ? (parseInt(itemEl.text(), 10) + 50) : 0) + 'px');
+    });
+    </script>
+</body>
+
+</html>
